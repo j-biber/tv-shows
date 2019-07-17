@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ul {
+list-style: none;
+}
+
+header {
+    display: flex;
+    background-color: lavender;
+    justify-content: space-between;
+    align-items: center;
+
+    .search-results {
+        position: absolute;
+        background: white;
+        min-width: 100%;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    width: 70vw;
+    // min-height: 100vh;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+    grid-gap: 20px;
+   }
+
+footer {
+    background-color: lavender;
+    text-align: center;
+    height: 40px;
+}
+
+.single-show {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "title title"
+      "poster seasons"
+      "poster cast"
+      "details details";
+
+      .show-title {
+        grid-area: title;
+        margin-bottom: 1.5rem;
+    }
+    
+    .show-image {
+        grid-area: poster;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    
+    .show-seasons {
+        grid-area: seasons;
+        margin-left: 2rem;
+    }
+    
+    .show-cast {
+        grid-area: cast;
+        margin-left: 2rem;
+    }
+    
+    .show-details {
+        grid-area: details;
+        margin-top: 1rem;
+
+    }
+}
